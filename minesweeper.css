@@ -7,16 +7,16 @@ p {
 }
 
 button {
-    margin-left: 47%;
+    margin-left: 50%;
 }
 
 /* 选择整块棋盘, 即类名是 board 的 div 元素 */
 div.board {
     background-color: #BFC9CA;
     border: 2px solid #AEB6BF;
-    margin: 1% 25% 1% 25%;
-    width: 50%;
-    height: 50%;
+    margin: 1% 15% 1% 15%;
+    width: 70%;
+    height: 70%;
     display: grid;
     grid-template: repeat(20, 1fr) / repeat(20, 1fr);
     column-gap: .5%;
@@ -36,12 +36,12 @@ div.board > div {
 /* 选择所有类名是 clear 的格子, 这是已被点击的无炸弹格子 */
 div.board > div.clear {
     background-color: #BFC9CA;
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 
 /* 选择所有类名是 bomb 的格子, 这是已被点击的炸弹格子 */
 div.board > div.bomb {
     background-color: #BFC9CA;
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: red;
 }
