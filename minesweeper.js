@@ -74,15 +74,22 @@ function clickTile(tileId) {
                 clickTile(neighbour); 
             }
         }
-        // 检查是否满足获胜条件
-        if (unclicked.length - mines.length === 0) {
-            playable = false;  // 终止游戏
-            alert("🎉Congratulations! You cleared the board!");
-        }
+        // ★★★ 延迟检查胜利条件，确保所有递归调用完成(能展开的格子全部展开)
+        setTimeout(checkVictory, 0);
+        /* setTimeout(func, delay) 用于延迟调用某个函数
+           即使 delay 为 0，JavaScript 也会把 checkVictory 放入事件队列中，
+           在当前执行栈清空后才会执行。*/
     }
     //console.log("Unclicked:", unclicked.length);
 }
 
+function checkVictory() {
+    // 如果剩下的未点击格子全部都是地雷，则判定为胜利
+    if (unclicked.length - mines.length === 0) {
+        playable = false;  // 终止游戏
+        alert("🎉Congratulations! You cleared the board!");
+    }
+}
 
 // 计算某个格子周围的地雷总数
 function mineNeighbours(tileId) {
