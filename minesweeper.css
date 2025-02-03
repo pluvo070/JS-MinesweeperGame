@@ -16,8 +16,10 @@ div.board {
     background-color: #BFC9CA;
     border: 2px solid #AEB6BF;
     margin: 2% auto; /* 上下外边距2%, 左右外边距自动居中 */
-    width: 70%; /* 这里的百分比表示是父元素的百分之多少 */
-    height: 70%;
+
+    height: 70%; /* 设定棋盘高度为父元素的 70% */
+    aspect-ratio: 1/1;  /* 保持宽高比为 1:1 */
+
     display: grid;
     /* 定义网格布局: 20行20列, 每个格子大小为1fr */
     grid-template: repeat(20, 1fr) / repeat(20, 1fr);
