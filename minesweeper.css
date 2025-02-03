@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    margin-left: 47%;
+}
+
+/* 选择整块棋盘, 即类名是 board 的 div 元素 */
+div.board {
+    background-color: #BFC9CA;
+    border: 2px solid #AEB6BF;
+    margin: 1% 25% 1% 25%;
+    width: 50%;
+    height: 50%;
+    display: grid;
+    grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+    column-gap: .5%;
+    row-gap: .5%;
+    min-height: 0;
+    min-width: 0;
+}
+
+/* 选择棋盘中的所有格子
+   其中 > 是子元素组合器, 即选择 div.board 元素下的所有 div 子元素 */
+div.board > div {
+    background-color: #F2F3F4;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 选择所有类名是 clear 的格子, 这是已被点击的无炸弹格子 */
+div.board > div.clear {
+    background-color: #BFC9CA;
+    font-size: 0.7rem;
+}
+
+/* 选择所有类名是 bomb 的格子, 这是已被点击的炸弹格子 */
+div.board > div.bomb {
+    background-color: #BFC9CA;
+    font-size: 0.7rem;
+    color: red;
+}
