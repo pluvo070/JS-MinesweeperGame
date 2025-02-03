@@ -7,22 +7,25 @@ p {
 }
 
 button {
-    margin-left: 50%;
+    display: block; /* 设为块级元素 */
+    margin: 0 auto; /* 上下外边距0, 左右外边距自动居中 */
 }
 
 /* 选择整块棋盘, 即类名是 board 的 div 元素 */
 div.board {
     background-color: #BFC9CA;
     border: 2px solid #AEB6BF;
-    margin: 1% 15% 1% 15%;
-    width: 70%;
+    margin: 2% auto; /* 上下外边距2%, 左右外边距自动居中 */
+    width: 70%; /* 这里的百分比表示是父元素的百分之多少 */
     height: 70%;
     display: grid;
+    /* 定义网格布局: 20行20列, 每个格子大小为1fr */
     grid-template: repeat(20, 1fr) / repeat(20, 1fr);
-    column-gap: .5%;
-    row-gap: .5%;
-    min-height: 0;
-    min-width: 0;
+    column-gap: .2%;
+    row-gap: .2%;
+    /* 固定棋盘最小尺寸, 防止窗口较小时棋盘变形*/
+    min-height: 500px;
+    min-width: 500px;
 }
 
 /* 选择棋盘中的所有格子
@@ -31,6 +34,8 @@ div.board > div {
     background-color: #F2F3F4;
     text-align: center;
     font-weight: bold;
+    /* 设定字体大小为1rem */
+    font-size: 1rem;
 }
 
 /* 选择所有类名是 clear 的格子, 这是已被点击的无炸弹格子 */
